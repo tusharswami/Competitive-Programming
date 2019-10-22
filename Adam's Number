@@ -1,0 +1,35 @@
+// Step 1:  Find square of number. 
+        // Step 2:  Find reverse of number.
+        // Step 3:  Find square of number in Step 2.
+        // Step 4:  Find reverse of number in Step 3.
+        // Step 5:  Find whether number obtained in Step 4 and Step 1 are equal or not.
+#include <stdio.h>
+
+int main()
+{
+    int num;
+        scanf("%d", &num);
+        if(square(num) == reverse(square(reverse(num)))){
+            printf("This is an ADAM's Number");
+        }else{
+            printf("Not an ADAM's Number");
+        }
+    return 0;
+}
+
+int reverse(int num){
+    int rev=0, digit;
+    
+    while(num){
+        digit = num % 10;
+        rev = rev * 10 + digit;
+        num = num / 10;
+    }
+    return rev;
+}
+
+int square(int num){
+    int squ;
+    squ = num * num;
+    return squ;
+}
