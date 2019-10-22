@@ -1,0 +1,29 @@
+//Armstrong Number
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int placevalue = 1, sum = 0, num, count = 0, digit;
+    printf("Enter a Number\n");
+    scanf("%d", &num);
+    while(num/placevalue){
+        count++;
+        placevalue *= 10;
+    }
+    placevalue = 1;
+    while(num/placevalue){
+        digit = (num/placevalue)%10;
+        sum = sum + pow(digit, count);
+        placevalue *=10;
+    }
+    
+    if(num == sum){
+        printf("%d is an Armstrong Number", num);
+    }else{
+        printf("%d is not an Armstrong Number", num);
+    }
+
+    return 0;
+}
+
